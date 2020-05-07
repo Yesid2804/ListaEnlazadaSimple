@@ -28,7 +28,7 @@ public class ListaEjercicio3 extends Lista{
         return true;
     }
     
-    public boolean encotrarRepetido(){
+    public boolean encotrarRepetidos(){
         Nodo temporal=null;
         Object dato=null;
 

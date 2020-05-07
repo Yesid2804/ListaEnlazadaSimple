@@ -82,7 +82,7 @@ public class TallerListaEnlazadaSimple {
 
             miLista3.mostrar();
             System.out.println("");
-            miLista3.encotrarRepetido();
+            miLista3.encotrarRepetidos();
             miLista3.mostrar();
 
             
@@ -94,26 +94,25 @@ public class TallerListaEnlazadaSimple {
         }
         
         if(opcion==4){
-            String nombre;int cont=1;
+            String nombre="";int cont=1;
             System.out.println("Ejercicio #4");
             ListaEjercicio4 lista4=new  ListaEjercicio4();
             System.out.println("");
             System.out.println("Ingrese n para finalizar");
             System.out.println("Ingrese los nombres a la lista");
-            while (cont<6) {                
+            while (!nombre.equals("n")) {                
                 System.out.print(cont+"- ");  
                 nombre=entrada.next();
-                if (!lista4.buscarDato(nombre)) {
-                    lista4.añadirALPrimero(nombre);
-                }else{
-                    System.out.println("Esta repetido");
-
+                if(!nombre.equals("n")){
+                    if (!lista4.buscarDato(nombre)) {
+                        lista4.añadirALPrimero(nombre);
+                        cont++;
+                    }else{
+                        System.out.println("Esta repetido");
+                    }
                 }
-
-                cont++;
             }
             lista4.mostrar();
-
         }   
         
         if(opcion==5){

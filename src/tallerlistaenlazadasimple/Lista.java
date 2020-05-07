@@ -58,13 +58,12 @@ public class Lista {
     
     public boolean buscarDato(Object dato){
         Nodo temporal=cabeza;
-            if (temporal==null) {
-                return false;
-            }else{
-                
-            }
-        
-        return true;   
+        for (int i = 0; i < this.size; i++) {
+            if(temporal.dato.equals(dato))
+                return true;
+            temporal=temporal.obtenerSiguiente();
+        }
+        return false; 
     }
     
 }
