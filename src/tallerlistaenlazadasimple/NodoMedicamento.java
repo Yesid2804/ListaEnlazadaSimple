@@ -23,7 +23,11 @@ public class NodoMedicamento {
         this.minimo = minimo;
         this.siguiente=null;
     }
+      
     
+    public void enlazarSiguiente(NodoMedicamento n){
+        siguiente=n; 
+    }
     
 }
 
