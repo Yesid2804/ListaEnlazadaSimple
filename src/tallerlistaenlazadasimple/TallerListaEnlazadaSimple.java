@@ -15,6 +15,8 @@ public class TallerListaEnlazadaSimple {
         int opcion=1,num;
         String seguir;
         Scanner entrada = new Scanner(System.in);
+        ListaEjercicio1 lEjercicio1=new ListaEjercicio1();
+
         while(opcion!=0){
             System.out.println("**********MENU DE EJERCICIOS**********");
             System.out.println("1- Ejercicio 1");
@@ -28,7 +30,6 @@ public class TallerListaEnlazadaSimple {
             System.out.println("0- Salir");
             opcion= entrada.nextInt();
 
-            ListaEjercicio1 lEjercicio1=new ListaEjercicio1();
 
             if(opcion==1){
                 System.out.println("Ejercicio #1");
@@ -40,19 +41,8 @@ public class TallerListaEnlazadaSimple {
                     System.out.println("3.- Fin de la Aplicación");
                     op=entrada.nextInt();
                     if (op==1) {
-                        ListaEjercicio1 listEj1=new ListaEjercicio1();
-                        String refe_Medicamento,nom_Medicamento,presentacion;
-                        long cant_existente,maximo,minimo;
-                        System.out.println("Ingrese 0 para finalizar registro");
-                        System.out.println("-----Medicamento#"+cont+"-----");
-                        System.out.print("Referencia del Medicamento:");refe_Medicamento=entrada.next(); 
-                        System.out.print("Nombre del Documento:");nom_Medicamento=entrada.next();
-                        System.out.print("Presentacion:");presentacion=entrada.next();
-                        System.out.print("Cantidad existente:");cant_existente=entrada.nextLong();
-                        System.out.print("Maximo:");maximo=entrada.nextLong();
-                        System.out.print("Minimo:");minimo=entrada.nextLong();
-
-                        lEjercicio1.añadirALPrimero(refe_Medicamento,nom_Medicamento,presentacion,cant_existente,maximo,minimo);
+                        NodoMedicamento nodoMedicamento = lEjercicio1.crearNodo();
+                        lEjercicio1.añadirALPrimero(nodoMedicamento);
                     }
                     if (op==2) {
                         int opSub=1;
@@ -71,7 +61,13 @@ public class TallerListaEnlazadaSimple {
                                     System.out.println("Cual Medicamento desea actualizar?");
                                     System.out.println("Indiquelo por la referencia del Medicamento");
                                     refMedicamento=entrada.next();
-                                    lEjercicio1.actualizarInformacioInventario(refMedicamento);
+                                    
+                                    if(!lEjercicio1.buscarPorReferencia(refMedicamento)){
+                                        System.out.println("La referencia no existe");
+                                    }else{
+                                        lEjercicio1.actualizarInformacioInventario(refMedicamento);    
+                                    }
+                                    
                                     
                                 
                                 }
@@ -85,15 +81,17 @@ public class TallerListaEnlazadaSimple {
                                     lEjercicio1.mostrar();
                                     
                                 }
-                        System.out.println("");
-                        Scanner Entrada = new Scanner(System.in);
-                        System.out.println("Press Enter key to continue...");
-                        try{seguir = Entrada.nextLine();
-                        menu();}
-                        catch(Exception e){}
+                                System.out.println("");
+                                Scanner Entrada = new Scanner(System.in);
+                                System.out.println("Press Enter key to continue...");
+                                try{
+                                    seguir = Entrada.nextLine();
+                                }
+                                catch(Exception e){}
+                            }else{
+                                System.out.println("No se encuentra Informacion registrada");
+                                opSub=0;
                             }
-                            System.out.println("No se encuentra Informacion registrada");
-                            opSub=0;
                         }
 
                     }

@@ -5,6 +5,8 @@
  */
 package tallerlistaenlazadasimple;
 
+import java.util.Scanner;
+
 /**
  *
  * @author Yesid
@@ -44,27 +46,27 @@ public class ListaEjercicio1 {
         return size;
     } 
      
-    public void añadirALPrimero(String refe_Medicamento, String nom_Medicamento, String presentacion, long cant_existente, long maximo, long minimo){
+    public void añadirALPrimero(NodoMedicamento nodoMedicamento){
         if (cabeza==null) {
-            cabeza=new NodoMedicamento(refe_Medicamento,nom_Medicamento,presentacion,cant_existente,maximo,minimo);
-
+            cabeza=nodoMedicamento;
         }else{
             NodoMedicamento temp=cabeza;
-            NodoMedicamento nuevo=new NodoMedicamento(refe_Medicamento,nom_Medicamento,presentacion,cant_existente,maximo,minimo);
+            NodoMedicamento nuevo=nodoMedicamento;
             nuevo.enlazarSiguiente(temp);
             this.cabeza=nuevo;
         }
         System.out.println("Medicamento Registrado");
         size++;
     }
-        public boolean retirarPorReferencia(String ref){
+    
+    public boolean retirarPorReferencia(String ref){
         NodoMedicamento temporal=cabeza;
         NodoMedicamento anterior = null;
         
-        if(temporal.refe_Medicamento!=ref){
+        if(temporal.refe_Medicamento==ref){
             cabeza=temporal.siguiente;
         }else{
-            while (ref!=temporal.refe_Medicamento) {            
+            while (!ref.equals(temporal.refe_Medicamento)) {            
                 anterior=temporal;
                 temporal=temporal.siguiente;
             }
@@ -76,9 +78,56 @@ public class ListaEjercicio1 {
     }
     
     public void actualizarInformacioInventario(String ref){
-        retirarPorReferencia(ref);
+        NodoMedicamento nuevo=this.crearNodo();
+        this.reemplazarPorReferencia(ref, nuevo);
     }
     
+    public boolean reemplazarPorReferencia(String ref,NodoMedicamento nodo){
+        NodoMedicamento temporal=cabeza;
+        for (int i = 0; i < this.size; i++) {
+            if(temporal.refe_Medicamento.equals(ref)){
+                temporal.cant_existente=nodo.cant_existente;
+                temporal.maximo=nodo.cant_existente;
+                temporal.minimo=nodo.cant_existente;
+                temporal.nom_Medicamento=nodo.nom_Medicamento;
+                temporal.presentacion=nodo.presentacion;
+                temporal.refe_Medicamento=nodo.refe_Medicamento;
+                return true;
+            }
+            temporal=temporal.siguiente;
+        }
+        return false; 
+    }
+    
+    public boolean buscarPorReferencia(String ref){
+        NodoMedicamento temporal=cabeza;
+        for (int i = 0; i < this.size; i++) {
+            if(temporal.refe_Medicamento.equals(ref))
+                return true;
+            temporal=temporal.siguiente;
+        }
+        return false; 
+    }
+    
+    
+    public NodoMedicamento crearNodo(){
+        Scanner entrada = new Scanner(System.in);
+        
+        String refe_Medicamento,nom_Medicamento,presentacion;
+        long cant_existente,maximo,minimo;
+        System.out.println("Ingrese 0 para finalizar registro");
+        System.out.println("-----Medicamento-----");
+        System.out.print("Referencia del Medicamento:");refe_Medicamento=entrada.next(); 
+        System.out.print("Nombre del Documento:");nom_Medicamento=entrada.next();
+        System.out.print("Presentacion:");presentacion=entrada.next();
+        System.out.print("Cantidad existente:");cant_existente=entrada.nextLong();
+        System.out.print("Maximo:");maximo=entrada.nextLong();
+        System.out.print("Minimo:");minimo=entrada.nextLong();
+
+        NodoMedicamento nodoMedicamento = new NodoMedicamento(refe_Medicamento,nom_Medicamento,presentacion,cant_existente,maximo,minimo);
+        
+        return nodoMedicamento;
+    }
     
     
     
