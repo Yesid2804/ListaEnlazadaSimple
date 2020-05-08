@@ -9,6 +9,14 @@ package tallerlistaenlazadasimple;
  *
  * @author Yesid
  */
-public class ListaEjercicio1 {
-    
+public class ListaEjercicio1 extends Lista{
+    Nodo cabeza;
+    int size;
+    public void mostrar(){
+        Nodo aux=this.cabeza;
+        while (aux!=null) {
+            System.out.print("["+aux.dato+"]--");
+            aux=aux.siguiente;
+        }
+    }
 }

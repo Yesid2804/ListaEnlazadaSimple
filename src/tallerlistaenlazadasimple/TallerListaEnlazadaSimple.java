@@ -30,7 +30,32 @@ public class TallerListaEnlazadaSimple {
         opcion= entrada.nextInt();
 
         if(opcion==1){}{
-      
+            int op,cont=1;
+            System.out.println("Ejercicio #1");
+            System.out.println("**********Menu Principal**********");
+            System.out.println("1.- Registrar Información de Inventario");
+            System.out.println("2.- Gestión de Inventario");
+            System.out.println("3.- Fin de la Aplicación");
+            op=entrada.nextInt();
+            if (op==1) {
+                ListaEjercicio1 listEj1=new ListaEjercicio1();
+                String refe_Medicamento,nom_Medicamento,presentacion;
+                long cant_existente,maximo,minimo;
+                System.out.println("Ingrese 0 para finalizar registro");
+                System.out.println("-----Medicamento#"+cont+"-----");
+                System.out.print("Referencia del Medicamento:");refe_Medicamento=entrada.next(); 
+                System.out.print("Nombre del Documento:");nom_Medicamento=entrada.next();
+                System.out.print("Presentacion:");presentacion=entrada.next();
+                System.out.print("Cantidad existente:");cant_existente=entrada.nextLong();
+                System.out.print("Maximo:");maximo=entrada.nextLong();
+                System.out.print("Minimo:");minimo=entrada.nextLong();
+                
+                
+                Lista a=new Lista();
+                a.añadirALPrimero(op);
+                a.mostrar();
+
+            }
         }
         
         if(opcion==2){

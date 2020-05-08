@@ -11,19 +11,4 @@ package tallerlistaenlazadasimple;
  */
 public class ListaEjercicio4 extends Lista{
     
-    public void añadirALPrimero(Object obj){
-        if (cabeza==null) {
-            cabeza=new Nodo(obj);
-        }else{
-            Nodo temp=cabeza;
-            Nodo nuevo=new Nodo(obj);
-            nuevo.enlazarSiguiente(temp);
-            cabeza=nuevo;
-        }
-        size++;
-    }
-    
-    
-    
-
 }
