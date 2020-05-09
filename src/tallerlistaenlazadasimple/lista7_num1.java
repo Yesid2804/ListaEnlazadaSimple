@@ -55,16 +55,39 @@ public class lista7_num1 {
             Nodo7_num2 nodo2=lista2.obtener(i);
             for (int j = 0; j < this.size; j++) {
                 Nodo7_num1 nodo1=this.obtener(j);
-                if (nodo2.Accion=='A') {
-                    this.añadirALPrimero(nodo2.codigo);
-                }else{
-                    
-                    
+                if (nodo1.codigo==nodo2.codigo && nodo2.Accion=='R') {
+                    this.retirarPorIndex(j);
                 }
             }
         }
         
+        for (int j = 0; j < lista2.size; j++) {
+            Nodo7_num2 nodo2=lista2.obtener(j);
+            if (nodo2.Accion=='A') {
+                this.añadirALPrimero(nodo2.codigo);
+            }
+        }
+
         
+    }
+    
+    public boolean retirarPorIndex(int index){ 
+        Nodo7_num1 temporal=this.cabeza1;
+        Nodo7_num1 anterior = null;
+        int cont=0;
+        if (index==0) {
+            this.cabeza1=temporal.siguiente;
+        }else{
+            while (index!=cont) {            
+                anterior=temporal;
+                temporal=temporal.siguiente;
+                cont++;
+            }
+            anterior.enlazarSiguiente(temporal.siguiente);
+        }
+        this.size--;
+        
+        return true;
     }
         
     public Nodo7_num1 obtener(int index){

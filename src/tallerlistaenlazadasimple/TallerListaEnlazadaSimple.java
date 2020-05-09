@@ -98,7 +98,6 @@ public class TallerListaEnlazadaSimple {
                                 opSub=0;
                             }
                         }
-
                     }
                     cont++;
                 }
@@ -252,14 +251,24 @@ public class TallerListaEnlazadaSimple {
                 System.out.println("");
                 lista7_num2 listaNum2=new lista7_num2();
                 System.out.println("*****Lista de Ejemplo 2*****");
-                listaNum2.añadirALPrimero(3,'A');
-                listaNum2.añadirALPrimero(5,'R');
-                listaNum2.añadirALPrimero(2,'A');
-                listaNum2.añadirALPrimero(7,'R');
+                listaNum2.añadirALPrimero(9,'A');
+                listaNum2.añadirALPrimero(2,'R');
+                listaNum2.añadirALPrimero(5,'A');
+                listaNum2.añadirALPrimero(1,'R');
                 listaNum2.mostrar();
                 
+                listaNum1.actualizar(listaNum2);
                 
-                
+                System.out.println("");
+                System.out.println("*****Lista de Ejemplo 1 nuevo*****");
+                listaNum1.mostrar();
+
+                System.out.println("");
+                Scanner Entrada = new Scanner(System.in);
+                System.out.println("Presiona Enter para continar...");
+                try{seguir = Entrada.nextLine();
+                menu();}
+                catch(Exception e){}
             }
             if(opcion==-1){
                 System.exit(0);
