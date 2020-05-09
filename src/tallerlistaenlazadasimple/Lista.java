@@ -66,4 +66,16 @@ public class Lista {
         return false; 
     }
     
+    public void añadirALPrimero(int num){
+        if (cabeza==null) {
+            cabeza=new Nodo(num);
+        }else{
+            Nodo temp=cabeza;
+            Nodo nuevo=new Nodo(num);
+            nuevo.enlazarSiguiente(temp);
+            cabeza=nuevo;
+        }
+        size++;
+    }
+    
 }

@@ -131,7 +131,7 @@ public class TallerListaEnlazadaSimple {
 
                System.out.println("");
                Scanner Entrada = new Scanner(System.in);
-               System.out.println("Press Enter key to continue...");
+               System.out.println("Presiona Enter para continar...");
                try{seguir = Entrada.nextLine();
                menu();}
                catch(Exception e){}
@@ -155,7 +155,7 @@ public class TallerListaEnlazadaSimple {
                 miLista3.mostrar();
 
                 Scanner Entrada = new Scanner(System.in);
-                System.out.println("Press Enter key to continue...");
+                System.out.println("Presiona Enter para continar...");
                 try{seguir = Entrada.nextLine();
                 menu();}
                 catch(Exception e){}
@@ -183,7 +183,7 @@ public class TallerListaEnlazadaSimple {
             }   
 
             if(opcion==5){
-                lista4_num1 listaNum1=new lista4_num1();
+                lista5_num1 listaNum1=new lista5_num1();
                 System.out.println("---Lista de Ejemplo 1---");
                 listaNum1.añadirALPrimero("1959",279);
                 listaNum1.añadirALPrimero("791",759);
@@ -191,7 +191,7 @@ public class TallerListaEnlazadaSimple {
                 listaNum1.añadirALPrimero("89135",1780);
                 listaNum1.mostrar();
                 
-                lista4_num2 listaNum2=new lista4_num2();
+                lista5_num2 listaNum2=new lista5_num2();
                 System.out.println("---Lista de Ejemplo 2----");
                 listaNum2.añadirALPrimero("2299",210);
                 listaNum2.añadirALPrimero("22119",121);
@@ -205,12 +205,40 @@ public class TallerListaEnlazadaSimple {
                 
                 System.out.println("");
                 Scanner Entrada = new Scanner(System.in);
-                System.out.println("Press Enter key to continue...");
+                System.out.println("Presiona Enter para continar...");
                 try{seguir = Entrada.nextLine();
                 menu();}
                 catch(Exception e){}
             }
             if(opcion==6){
+                Lista6_num1 listaNum1=new Lista6_num1();
+                System.out.println("*****Lista de Ejemplo 1*****");
+                listaNum1.añadirALPrimero(4);
+                listaNum1.añadirALPrimero(3);
+                listaNum1.añadirALPrimero(2);
+                listaNum1.añadirALPrimero(1);
+                listaNum1.mostrar();
+                
+                System.out.println("");
+                Lista6_num2 listaNum2=new Lista6_num2();
+                System.out.println("*****Lista de Ejemplo 2*****");
+                listaNum2.añadirALPrimero(3);
+                listaNum2.añadirALPrimero(5);
+                listaNum2.añadirALPrimero(2);
+                listaNum2.añadirALPrimero(7);
+                listaNum2.mostrar();
+                
+                listaNum1.retirarRepetidos(listaNum2);
+                System.out.println("");
+                System.out.println("*****Lista de Ejemplo 1 nuevo*****");
+                listaNum1.mostrar();
+
+                System.out.println("");
+                Scanner Entrada = new Scanner(System.in);
+                System.out.println("Presiona Enter para continar...");
+                try{seguir = Entrada.nextLine();
+                menu();}
+                catch(Exception e){}
 
             }
             if(opcion==7){

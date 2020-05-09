@@ -9,18 +9,18 @@ package tallerlistaenlazadasimple;
  *
  * @author Yesid 
  */
-public class Nodo4_num1 {
-    Nodo4_num1 siguiente;
+public class Nodo5_num1 {
+    Nodo5_num1 siguiente;
     String refe;
     long enBodega;
 
-    public Nodo4_num1(String refe,long enBodega) {
+    public Nodo5_num1(String refe,long enBodega) {
         this.refe = refe;
         this.enBodega = enBodega;
         this.siguiente = null;
 
     }
-    public void enlazarSiguiente(Nodo4_num1 n){
+    public void enlazarSiguiente(Nodo5_num1 n){
         siguiente=n; 
     }
     

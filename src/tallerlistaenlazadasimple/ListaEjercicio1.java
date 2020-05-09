@@ -117,7 +117,7 @@ public class ListaEjercicio1 {
         System.out.println("Ingrese 0 para finalizar registro");
         System.out.println("-----Medicamento-----");
         System.out.print("Referencia del Medicamento:");refe_Medicamento=entrada.next(); 
-        System.out.print("Nombre del Documento:");nom_Medicamento=entrada.next();
+        System.out.print("Nombre del Medicamento:");nom_Medicamento=entrada.next();
         System.out.print("Presentacion:");presentacion=entrada.next();
         System.out.print("Cantidad existente:");cant_existente=entrada.nextLong();
         System.out.print("Maximo:");maximo=entrada.nextLong();
