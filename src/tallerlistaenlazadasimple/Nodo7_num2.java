@@ -21,10 +21,10 @@ public class Nodo7_num2 {
         this.codigo =codigo;
         this.Accion=Accion;
         this.siguiente = null;
-        
     }
 
     public void enlazarSiguiente(Nodo7_num2 n){
         siguiente=n; 
     }
+    
 }
