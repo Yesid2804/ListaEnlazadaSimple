@@ -26,7 +26,6 @@ public class lista5_num1{
     public void añadirALPrimero(String refe,long enBodega){
         if (cabeza1==null) {
             cabeza1=new Nodo5_num1(refe,enBodega);
-
         }else{
             Nodo5_num1 temp=cabeza1;
             Nodo5_num1 nuevo=new Nodo5_num1(refe,enBodega);
@@ -66,7 +65,7 @@ public class lista5_num1{
         }
     }
     
-     public Nodo5_num1 obtener(int index){
+    public Nodo5_num1 obtener(int index){
         int con=0;
         Nodo5_num1 temporal=this.cabeza1;
         while (con!=index) {            

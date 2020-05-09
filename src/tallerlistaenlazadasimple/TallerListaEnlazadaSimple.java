@@ -239,7 +239,6 @@ public class TallerListaEnlazadaSimple {
                 try{seguir = Entrada.nextLine();
                 menu();}
                 catch(Exception e){}
-
             }
             if(opcion==7){
 

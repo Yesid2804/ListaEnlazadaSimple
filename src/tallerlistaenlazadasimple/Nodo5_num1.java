@@ -18,11 +18,8 @@ public class Nodo5_num1 {
         this.refe = refe;
         this.enBodega = enBodega;
         this.siguiente = null;
-
     }
     public void enlazarSiguiente(Nodo5_num1 n){
         siguiente=n; 
     }
-    
-    
 }
