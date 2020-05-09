@@ -55,22 +55,17 @@ public class lista4_num1 {
         
     public void actualizar(){
         lista4_num2 lNum2=new lista4_num2();
-        Nodo4_num2 nodoNum2=new Nodo4_num2();
         
         Nodo4_num1 temporal=cabeza1;
-        if(cabeza1==null){
+        
+        if(cabeza1==null && lNum2.cabeza2==null){
             System.out.println("Lista vacia");
         }else{
             for (int i = 0; i < size; i++) {
-                System.out.println();
                 
                 temporal=temporal.siguiente;
-
             }
         }
 
     }
-        
-        
-    
 }

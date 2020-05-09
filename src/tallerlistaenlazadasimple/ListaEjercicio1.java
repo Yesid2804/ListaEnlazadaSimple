@@ -18,17 +18,17 @@ public class ListaEjercicio1 {
         this.cabeza=null;
         size=0;
     }
-    public void mostrar(){
+    public void mostrarRegistro(){
         int i=1;
         NodoMedicamento aux=this.cabeza;
         while (aux!=null) {
             System.out.println("Medicamento #"+i);
-            System.out.println("[Referencia: "+aux.refe_Medicamento+"]--");
-            System.out.println("[Nombre: "+aux.nom_Medicamento+"]--");
-            System.out.println("[Presentacion: "+aux.presentacion+"]--");
-            System.out.println("[Cantidad existente:"+aux.cant_existente+"]--");
-            System.out.println("[Maximo: "+aux.maximo+"]--");
-            System.out.println("[Minimo: "+aux.minimo+"]--");
+            System.out.println("Referencia: "+aux.refe_Medicamento+"");
+            System.out.println("Nombre: "+aux.nom_Medicamento+"");
+            System.out.println("Presentacion: "+aux.presentacion+"");
+            System.out.println("Cantidad existente:"+aux.cant_existente+"");
+            System.out.println("Maximo: "+aux.maximo+"");
+            System.out.println("Minimo: "+aux.minimo+"");
             System.out.println("");
             aux=aux.siguiente;
             i++;
@@ -87,8 +87,8 @@ public class ListaEjercicio1 {
         for (int i = 0; i < this.size; i++) {
             if(temporal.refe_Medicamento.equals(ref)){
                 temporal.cant_existente=nodo.cant_existente;
-                temporal.maximo=nodo.cant_existente;
-                temporal.minimo=nodo.cant_existente;
+                temporal.maximo=nodo.maximo;
+                temporal.minimo=nodo.minimo;
                 temporal.nom_Medicamento=nodo.nom_Medicamento;
                 temporal.presentacion=nodo.presentacion;
                 temporal.refe_Medicamento=nodo.refe_Medicamento;
@@ -104,11 +104,10 @@ public class ListaEjercicio1 {
         for (int i = 0; i < this.size; i++) {
             if(temporal.refe_Medicamento.equals(ref))
                 return true;
-            temporal=temporal.siguiente;
+                temporal=temporal.siguiente;
         }
         return false; 
     }
-    
     
     public NodoMedicamento crearNodo(){
         Scanner entrada = new Scanner(System.in);
@@ -128,8 +127,4 @@ public class ListaEjercicio1 {
         
         return nodoMedicamento;
     }
-    
-    
-    
-    
 }

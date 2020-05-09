@@ -57,7 +57,7 @@ public class TallerListaEnlazadaSimple {
                                 opSub=entrada.nextInt();
                                 if (opSub==1) {
                                     String refMedicamento;
-                                    lEjercicio1.mostrar();
+                                    lEjercicio1.mostrarRegistro();
                                     System.out.println("Cual Medicamento desea actualizar?");
                                     System.out.println("Indiquelo por la referencia del Medicamento");
                                     refMedicamento=entrada.next();
@@ -67,27 +67,32 @@ public class TallerListaEnlazadaSimple {
                                     }else{
                                         lEjercicio1.actualizarInformacioInventario(refMedicamento);    
                                     }
-                                    
-                                    
-                                
                                 }
                                 if (opSub==2) {
                                     String refMedicamento;
-                                    lEjercicio1.mostrar();
+                                    lEjercicio1.mostrarRegistro();
                                     System.out.println("Cual Medicamento desea eliminar?");
                                     System.out.println("Indiquelo por la referencia del Medicamento");
                                     refMedicamento=entrada.next();
                                     lEjercicio1.retirarPorReferencia(refMedicamento);
-                                    lEjercicio1.mostrar();
-                                    
+                                    lEjercicio1.mostrarRegistro();
                                 }
-                                System.out.println("");
-                                Scanner Entrada = new Scanner(System.in);
-                                System.out.println("Press Enter key to continue...");
-                                try{
-                                    seguir = Entrada.nextLine();
+                                if (opSub==3) {
+                                    lEjercicio1.mostrarRegistro();
                                 }
-                                catch(Exception e){}
+                                if (opSub==4) {
+                                    System.out.print("La cantidad de Medicamentos registrados es de"+ lEjercicio1.size);
+                                }
+                                if (opSub!=0) {
+                                    System.out.println("");
+                                    Scanner Entrada = new Scanner(System.in);
+                                    System.out.println("Press Enter key to continue...");
+                                    try{
+                                        seguir = Entrada.nextLine();
+                                    }
+                                    catch(Exception e){}
+                                }
+                               
                             }else{
                                 System.out.println("No se encuentra Informacion registrada");
                                 opSub=0;
