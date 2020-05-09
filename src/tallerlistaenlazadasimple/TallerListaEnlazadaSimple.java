@@ -186,20 +186,22 @@ public class TallerListaEnlazadaSimple {
                 lista4_num1 listaNum1=new lista4_num1();
                 System.out.println("---Lista de Ejemplo 1---");
                 listaNum1.añadirALPrimero("1959",279);
-                listaNum1.añadirALPrimero("791",579);
+                listaNum1.añadirALPrimero("791",759);
                 listaNum1.añadirALPrimero("22119",550);
                 listaNum1.añadirALPrimero("89135",1780);
                 listaNum1.mostrar();
                 
                 lista4_num2 listaNum2=new lista4_num2();
                 System.out.println("---Lista de Ejemplo 2----");
-                listaNum2.añadirALPrimero("119",550);
-                listaNum2.añadirALPrimero("200",279);
-                listaNum2.añadirALPrimero("91",559);
-                listaNum2.añadirALPrimero("89135",170);
+                listaNum2.añadirALPrimero("2299",210);
+                listaNum2.añadirALPrimero("22119",121);
+                listaNum2.añadirALPrimero("791",180);
+                listaNum2.añadirALPrimero("88334",456);
                 listaNum2.mostrar();
                 
-                listaNum1.actualizar();
+                listaNum1.actualizar(listaNum2);
+                
+                listaNum1.mostrar();
                 
                 System.out.println("");
                 Scanner Entrada = new Scanner(System.in);

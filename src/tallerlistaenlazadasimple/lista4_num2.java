@@ -53,6 +53,16 @@ public class lista4_num2 {
             i=1;
         }
     }
+    
+     public Nodo4_num2 obtener(int index){
+        int con=0;
+        Nodo4_num2 temporal=this.cabeza2;
+        while (con!=index) {            
+            temporal=temporal.siguiente;
+            con++;
+        }
+        return temporal;
+    }
         
 //        public void actualizar(){
 //        lista4_num2 lNum2=new lista4_num2();
